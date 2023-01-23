@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Калькулятор</title>
+</head>
+<body>
+	<input id="num1" />
+	<div id="operator_btns">
+	  <button id="plus" onclick="op='+'">+</button>
+	  <button id="minus" onclick="op='-'">-</button>
+	  <button id="times" onclick="op='*'">x</button>
+	  <button id="divide" onclick="op='/'">:</button>
+	</div>
+	<input id="num2" />
+	<br>
+    <div id="operator_btns2">
+        <button id="plus" onclick="op2='+'">+</button>
+        <button id="minus" onclick="op2='-'">-</button>
+        <button id="times" onclick="op2='*'">x</button>
+        <button id="divide" onclick="op2='/'">:</button>
+      </div>
+    <input id="num3"/>
+    <br>
+	<button onclick="func()">Посчитать</button>
+	<p id="result"></p>
+	<script>
+	  var op; 
+	  function func() {
+	    var result;
+	    var num1 = Number(document.getElementById("num1").value);
+	    var num2 = Number(document.getElementById("num2").value); 
+        var num3 = Number(document.getElementById("num3").value);
+	    switch (op) {
+	      case '+':
+	        switch (op2) {
+                case '+':
+                    result = num1 + num2 + num3;
+                    break;
+                case '-':
+                    result = num1 + num2 - num3;
+                    break;
+                case '*':
+                    result = num1 + num2 * num3;
+                    break;
+                case '/':
+                    result = num1 + num2 / num3;
+                    break;           
+            }
+            break;
+	      case '-':
+            switch (op2) {
+                case '+':
+                    result = num1 - num2 + num3;
+                    break;
+                 case '-': 
+                    result = num1 - num2 - num3;
+                    break;
+                case '*':
+                    result = num1 - num2 * num3;
+                    break;
+                case '/': 
+                    result = num1 - num2 / num3;
+                    break;
+            }
+            break;
+	      case '*':
+	        switch (op2) {
+                case '+':
+                    result = num1 * num2 + num3;
+                    break;
+                case '-':
+                    result = num1 * num2 - num3;
+                    break;
+                case '*':
+                    result = num1 * num2 * num3;
+                    break;
+                case '/':
+                    result = num1 * num2 / num3;            
+            }
+            break;
+	      case '/':
+            switch (op2) {
+                case '+':
+                    result = num1 / num2 + num3;
+                    break;
+                case '-':
+                    result = num1 / num2 - num3;
+                    break;
+                case '*':
+                    result = num1 / num2 * num3;
+                    break;
+                case '/':
+                    result = num1 / num2 / num3;
+                    break;            
+            }
+            break;
+	    }
+	    
+	    document.getElementById("result").innerHTML = result;
+	  }
+	</script>
+
+</body>
+</html>
